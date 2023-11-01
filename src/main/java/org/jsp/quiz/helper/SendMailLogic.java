@@ -30,7 +30,7 @@ public class SendMailLogic {
 		MimeMessage message = mailSender.createMimeMessage();
 		MimeMessageHelper helper = new MimeMessageHelper(message);
 
-		helper.setFrom("saishkulkarni7@gmail.com", "Quiz App");
+		helper.setFrom("pmadhushree4@gmail.com", "Quiz App");
 		helper.setTo(student.getEmail());
 		helper.setSubject("Otp Verification");
 		String gender = null;
@@ -49,7 +49,7 @@ public class SendMailLogic {
 		MimeMessage message = mailSender.createMimeMessage();
 		MimeMessageHelper helper = new MimeMessageHelper(message);
 
-		helper.setFrom("saishkulkarni7@gmail.com", "Quiz App");
+		helper.setFrom("pmadhushree4@gmail.com", "Quiz App");
 		helper.setTo(trainer.getEmail());
 		helper.setSubject("Verification Link");
 
@@ -64,6 +64,48 @@ public class SendMailLogic {
 		String body = "<html><body><h1>Hello " + gender + trainer.getName()
 				+ "</h1><h2>Your Verification link is : <a href='" + url
 				+ "'>Click here to Verify</a></h2><h3>Thank you, Regards</h3><h1>Quiz App Jspiders</h1></body></html>";
+		helper.setText(body, true);
+		mailSender.send(message);
+	}
+	
+	public void sendMailForChangePassword(Student student) throws MessagingException, UnsupportedEncodingException {
+		MimeMessage message = mailSender.createMimeMessage();
+		MimeMessageHelper helper = new MimeMessageHelper(message);
+
+		helper.setFrom("pmadhushree4@gmail.com", "Quiz App");
+		helper.setTo(student.getEmail());
+		helper.setSubject("Reset Password OTP");
+		String gender = null;
+		if (student.getGender().equals("male"))
+			gender = "Mr. ";
+		else
+			gender = "Ms. ";
+		String body = "<html><body><h1>Hello " + gender + student.getName()
+				+ "</h1><h2>Your OTP for Password Reset is : " + student.getOtp()
+				+ "</h2><h3>Thank you, Regards</h3><h1>Quiz App Jspiders</h1></body></html>";
+		helper.setText(body, true);
+		mailSender.send(message);
+	}
+	
+	public void sendMailForChangePassword(@Valid Trainer trainer) throws MessagingException, UnsupportedEncodingException {
+		MimeMessage message = mailSender.createMimeMessage();
+		MimeMessageHelper helper = new MimeMessageHelper(message);
+
+		helper.setFrom("pmadhushree4@gmail.com", "Quiz App");
+		helper.setTo(trainer.getEmail());
+		helper.setSubject("Reset Password Link");
+
+		String gender = null;
+		if (trainer.getGender().equals("male"))
+			gender = "Mr. ";
+		else
+			gender = "Ms. ";
+
+		String url = host + port + "/trainer/enter-password/" + trainer.getEmail();
+
+		String body = "<html><body><h1>Hello " + gender + trainer.getName()
+				+ "</h1><h2>Your Reset Password link is : <a href='" + url
+				+ "'>Change Password</a></h2><h3>Thank you, Regards</h3><h1>Quiz App Jspiders</h1></body></html>";
 		helper.setText(body, true);
 		mailSender.send(message);
 	}

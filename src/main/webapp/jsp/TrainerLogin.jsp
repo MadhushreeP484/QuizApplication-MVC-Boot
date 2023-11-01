@@ -97,7 +97,7 @@ a {
 <h2>${pass}</h2>
 <h3>${fail}</h3>
 <div id="login">
-<form action="#" method="post">
+<form action="/trainer/login" method="post">
     <table>
         <tr>
             <td><label for="email">Email:</label></td>
@@ -113,7 +113,7 @@ a {
         </tr>
     </table>
 </form>
-<a href="#">Forgot Password?</a><br><br><a href="/trainer/signup"><button>Create New Account</button></a> <a href="/"><button>Back</button></a>
+<a href="/trainer/forgot-password">Forgot Password?</a><br><br><a href="/trainer/signup"><button>Create New Account</button></a> <a href="/"><button>Back</button></a>
 </div>
 
 <script>

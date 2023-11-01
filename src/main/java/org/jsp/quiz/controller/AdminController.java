@@ -19,6 +19,11 @@ public class AdminController {
 	@Autowired
 	AdminService adminService;
 
+	@GetMapping()
+	public String loadHome() {
+		return "AdminHome";
+	}
+	
 	@GetMapping("/login")
 	public String loadLogin() {
 		return "AdminLogin";

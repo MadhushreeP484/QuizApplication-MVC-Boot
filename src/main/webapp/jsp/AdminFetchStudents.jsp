@@ -29,7 +29,7 @@
 			<tr>
 				<th>${student.getId()}</th>
 				<th>${student.getName()}</th>
-				<th><img
+				<th><img width="10%", height="10%"
 					src="data:image/jpeg;base64,${Base64.encodeBase64String(student.getPicture())}">
 				</th>
 				<th>${student.getEmail()}</th>
@@ -46,5 +46,6 @@
 		</c:forEach>
 
 	</table>
+	<a href="/admin"><button type="button">Back</button></a>
 </body>
 </html>

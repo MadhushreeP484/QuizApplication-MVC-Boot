@@ -67,4 +67,19 @@ public class StudentController {
 	{
 		return studentService.login(helper,map,session);
 	}
+	
+	@GetMapping("/forgot-password")
+	public String forgotPassword(ModelMap map) {
+		return studentService.forgotPassword(map);
+	}
+	
+	@PostMapping("/email-verify")
+	public String EmailVerification(@RequestParam String email, ModelMap map) throws UnsupportedEncodingException, MessagingException {
+		return studentService.emailVerification(email, map);
+	}
+	
+	@PostMapping("/change-password/{email}")
+	public String changePassword(@PathVariable String email,@RequestParam int otp, @RequestParam String password, ModelMap map) {
+		return studentService.changePassword(email,otp,password,map);
+	}
 }

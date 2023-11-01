@@ -8,10 +8,8 @@
 <style>
 body {
 	font-family: Arial, sans-serif;
-	background-color: #f4f4f4;
 	margin: 0;
 	padding: 0;
-	background-image: url("../images/bg1.jpg");
 	background-size: cover;
 }
 

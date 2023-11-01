@@ -113,7 +113,7 @@ a {
         </tr>
     </table>
 </form>
-<a href="#">Forgot Password?</a><br><br><a href="/student/signup"><button>Create New Account</button></a> <a href="/"><button>Back</button></a>
+<a href="/student/forgot-password">Forgot Password?</a><br><br><a href="/student/signup"><button>Create New Account</button></a> <a href="/"><button>Back</button></a>
 </div>
 
 <script>

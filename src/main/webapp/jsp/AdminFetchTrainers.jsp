@@ -31,7 +31,7 @@
 			<tr>
 				<th>${trainer.getId()}</th>
 				<th>${trainer.getName()}</th>
-				<th><img
+				<th><img width="10%", height="10%"
 					src="data:image/jpeg;base64,${Base64.encodeBase64String(trainer.getPicture())}">
 				</th>
 				<th>${trainer.getEmail()}</th>
@@ -50,5 +50,6 @@
 		</c:forEach>
 
 	</table>
+	<a href="/admin"><button type="button">Back</button></a>
 </body>
 </html>
